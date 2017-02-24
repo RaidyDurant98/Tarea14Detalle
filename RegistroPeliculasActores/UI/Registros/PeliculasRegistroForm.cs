@@ -111,7 +111,7 @@ namespace RegistroPeliculasActores.UI.Registros
             var pelicula = BLL.PeliculasBLL.Buscar(Utilidades.TOINT(peliculaIdTextBox.Text));
 
             if(pelicula != null)
-            {
+            {               
                 nombreTextBox.Text = pelicula.Nombre;
                 fechaEstrenoDateTimePicker.Value = pelicula.FechaEstreno;
                 actorComboBox.SelectedValue = pelicula.ActorId;

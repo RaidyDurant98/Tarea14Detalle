@@ -25,5 +25,10 @@ namespace RegistroPeliculasActores
         {
             new UI.Registros.ActoresRegistroForm().Show();
         }
+
+        private void peliculasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new UI.Consultas.ConsultaPeliculasForm().Show();
+        }
     }
 }

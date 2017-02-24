@@ -66,10 +66,10 @@ namespace RegistroPeliculasActores.BLL
                     pelicula = Conec.Pelicula.Find(id);
                     pelicula.Actor.Count();
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
-                    throw;
+                    MessageBox.Show(e.ToString());
+                    //throw;
                 }
             }
 
@@ -83,6 +83,24 @@ namespace RegistroPeliculasActores.BLL
                 try
                 {
                     return Conec.Pelicula.ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+            return null;
+        }
+
+        public static List<Entidades.Peliculas> GetListFecha(DateTime desde, DateTime hasta)
+        {
+            using (var Conec = new DAL.PeliculaActorDb())
+            {
+                try
+                {
+                    return Conec.Pelicula.Where(p => p.FechaEstreno >= desde.Date && p.FechaEstreno <= hasta.Date).ToList();
                 }
                 catch (Exception)
                 {
